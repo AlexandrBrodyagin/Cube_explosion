@@ -1,13 +1,14 @@
 using UnityEngine;
 
-public class Colorizer : MonoBehaviour
+[RequireComponent(typeof(Renderer))]
+public class CubeColorizer : MonoBehaviour
 {
-    public void Awake()
+    private void Awake()
     {
         ApplyRandomColor();
     }
 
-    private void ApplyRandomColor()
+    public void ApplyRandomColor()
     {
         GetComponent<Renderer>().material.color = Random.ColorHSV();
     }
